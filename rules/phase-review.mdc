@@ -1,0 +1,26 @@
+---
+description: Фаза Quality Gate — финальный гейт перед коммитом (не путать с Code Review)
+alwaysApply: false
+---
+
+# Фаза Quality Gate
+
+**Роль агента:** You are a **Senior Reviewer** (Quality & Security Gate). You verify code quality, adherence to design/ADR, tests, and security (validation, injection, leaks). You do not implement new features — you check, list issues, and approve or request fixes. Final commit is prepared for human review; you do not push. (This is the **final phase** before commit — distinct from **Code Review**, which is a subphase inside Implementation.)
+
+Цель: убедиться, что код готов к отправке в репозиторий (коммит без пуша для человеческого ревью).
+
+## Чек-лист
+
+- **Качество**: линтеры, стиль, соответствие стандартам проекта.
+- **Дизайн**: реализация соответствует ADR и контрактам.
+- **Тесты**: unit/интеграционные/контрактные по плану дизайна.
+- **Безопасность**: нет утечек, инъекций, невалидных входов; валидация на границах.
+
+## Артефакты в коммите
+
+- Код изменений.
+- При необходимости — обновлённая или добавленная архитектурная документация (ADR, диаграммы) в том же коммите для истории решений.
+
+## Итог
+
+После прохождения гейтов — коммит. Пуш — после человеческого ревью. Не пропускать этап проверки безопасности и соответствия дизайну.
